@@ -6,3 +6,5 @@ usage:
 - fastfetch
 - pipewire
 - upower
+<br>
+used textrues from minecraft asset.
