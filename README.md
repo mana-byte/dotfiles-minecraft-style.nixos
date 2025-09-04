@@ -1,6 +1,7 @@
 # the MINECRAFT style ricing dotfiles
 usage:
 - hyprland
+- kitty
 - quickshell
 - neovim
 - fastfetch
