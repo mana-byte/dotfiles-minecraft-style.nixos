@@ -12,6 +12,9 @@ PanelWindow {
 	implicitHeight: 80
         color: "transparent"
 
+        Clock {
+        }
+
         Hotbar {
         }
 
