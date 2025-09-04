@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Io
+import Quickshell.Services.Notifications
 
 Item {
         id: root
@@ -16,6 +17,7 @@ Item {
                 Dismissing
         }
         property var state: Notif.Starting
+        property bool playedOut: false
 
         property int velocityX: 0
 
@@ -42,6 +44,10 @@ Item {
                         }
 
                         else if (root.state == Notif.Dismissing) {
+                                if (!root.playedOut) {
+                                        playSoundOut.running = true
+                                        root.playedOut = true
+                                }
                                 if (display.x < root.dismissX) {
                                         display.x += root.velocityX * frameTime
                                         root.velocityX += 20
@@ -74,6 +80,24 @@ Item {
                 onClicked: () => {
                         showPopup.running = true
                 }
+        }
+
+        Process {
+                id: playSoundCritical
+                running: root.notif.urgency == NotificationUrgency.Critical
+                command: ["play", "~/.config/quickshell/notifications/assets/challenge_complete.ogg", "--no-show-progress"]
+        }
+
+        Process {
+                id: playSoundIn
+                running: root.notif.urgency != NotificationUrgency.Critical
+                command: ["play", "~/.config/quickshell/notifications/assets/in.ogg", "--no-show-progress"]
+        }
+
+        Process {
+                id: playSoundOut
+                running: false
+                command: ["play", "~/.config/quickshell/notifications/assets/out.ogg", "--no-show-progress"]
         }
 
         Process {
