@@ -37,6 +37,7 @@ Item {
                                         root.velocityX += 20
                                 }
                                 else {
+                                        if (root.notif.urgency == NotificationUrgency.Critical) playSoundCritical.running = true
                                         display.x = root.targetX
                                         root.state = Notif.Positioned
                                         root.velocityX = 0
@@ -84,13 +85,13 @@ Item {
 
         Process {
                 id: playSoundCritical
-                running: root.notif.urgency == NotificationUrgency.Critical
+                running: false
                 command: ["play", "~/.config/quickshell/notifications/assets/challenge_complete.ogg", "--no-show-progress"]
         }
 
         Process {
                 id: playSoundIn
-                running: root.notif.urgency != NotificationUrgency.Critical
+                running: true
                 command: ["play", "~/.config/quickshell/notifications/assets/in.ogg", "--no-show-progress"]
         }
 
