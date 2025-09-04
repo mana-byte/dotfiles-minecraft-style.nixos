@@ -9,7 +9,7 @@ usage:
 - pipewire
 - upower
 <br>
-Inspired by [rivendell-hyprdots of zacoons](https://codeberg.org/zacoons/rivendell-hyprdots/)
+Inspired by [rivendell-hyprdots](https://codeberg.org/zacoons/rivendell-hyprdots/) of zacoons<br>
 <br>
 This project is not an official Minecraft product.<br>
 It is not approved by or associated with Mojang or Microsoft.<br>
