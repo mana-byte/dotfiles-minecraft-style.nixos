@@ -2,6 +2,8 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import Quickshell
+import Quickshell.Io
+import "../components"
 
 PanelWindow {
         id: root
@@ -68,7 +70,20 @@ PanelWindow {
                                 font.pixelSize: 16
                                 smooth: false
                         }
+
+                        McButton {
+                                text: "Copy!"
+                                clicked: () => {
+                                        copy.running = true;
+                                }
+                        }
                 }
+        }
+
+        Process {
+                id: copy
+                running: false
+                command: ["wl-copy", root.controller.body]
         }
 
         FontLoader {
