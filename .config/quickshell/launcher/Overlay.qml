@@ -169,7 +169,16 @@ PanelWindow {
                                                 implicitHeight: 10
 
                                                 onClicked: {
-                                                        modelData.execute();
+                                                        if (modelData.runInTerminal) {
+                                                                let command = ['kitty', ...modelData.command]
+
+                                                                Quickshell.execDetached({
+                                                                        command: command,
+                                                                        workingDirectory: modelData.workingDirectory,
+                                                                });
+                                                        } else {
+                                                                modelData.execute();
+                                                        }
                                                         root.controller.isOpen = false
                                                 }
 
