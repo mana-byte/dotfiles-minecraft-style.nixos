@@ -4,6 +4,7 @@ import QtQuick
 import "bar" as Bar
 import "notifications" as Notifs
 import "launcher" as Launcher
+import "pause" as Pause
 
 ShellRoot {
         Bg {}
@@ -15,5 +16,6 @@ ShellRoot {
         Component.onCompleted: () => {
                 Notifs.PopupController.init();
                 Launcher.Controller.init();
+                Pause.Controller.init();
         }
 }

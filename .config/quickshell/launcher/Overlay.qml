@@ -1,10 +1,8 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
-import Quickshell.Widgets
 
 PanelWindow {
         id: root
@@ -70,9 +68,9 @@ PanelWindow {
                                 }
 
                                 ListView {
-                                        width: 100
+                                        width: 95
                                         height: 125
-                                        y: 14
+                                        y: 20
                                         id: list
                                         cacheBuffer: 0
                                         model: ScriptModel {
@@ -182,9 +180,11 @@ PanelWindow {
                                                         root.controller.isOpen = false
                                                 }
 
-                                                RowLayout {
-                                                        IconImage {
-                                                                implicitSize: 10
+                                                Row {
+                                                        spacing: 5
+                                                        Image {
+                                                                width: 10
+                                                                height: 10
                                                                 asynchronous: true
                                                                 smooth: false
                                                                 source: Quickshell.iconPath(delegate.modelData.icon)

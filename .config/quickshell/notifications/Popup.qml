@@ -73,7 +73,7 @@ PanelWindow {
 
                         McButton {
                                 text: "Copy!"
-                                clicked: () => {
+                                func: () => {
                                         copy.running = true;
                                 }
                         }

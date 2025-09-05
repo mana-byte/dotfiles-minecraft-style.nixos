@@ -5,7 +5,6 @@ MouseArea {
         id: root
         required property var text
         required property var func
-
         property bool disabled: false
 
         width: buttonImg.width * 2
@@ -14,11 +13,11 @@ MouseArea {
         hoverEnabled: true
 
         onEntered: () => {
-                buttonImg.source = disabled ? "assets/button_disabled.png" : "assets/button_highlighted.png"
+                buttonImg.source = disabled ? "assets/half_button_disabled.png" : "assets/half_button_highlighted.png"
         }
 
         onExited: () => {
-                buttonImg.source = disabled ? "assets/button_disabled.png" : "assets/button.png"
+                buttonImg.source = disabled ? "assets/half_button_disabled.png" : "assets/half_button.png"
         }
 
         onClicked: () => {
@@ -33,7 +32,7 @@ MouseArea {
                 y: height/2
                 id: buttonImg
                 scale: 2
-                source: root.disabled ? "assets/button_disabled.png" : "assets/button.png"
+                source: root.disabled ? "assets/half_button_disabled.png" : "assets/half_button.png"
         }
 
         Text {
