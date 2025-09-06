@@ -8,6 +8,8 @@ usage:
 - neovim
 - fastfetch
 - pipewire
+- pulseaudio
+- brightnessctl
 - upower
 <br>
 Inspired by [rivendell-hyprdots](https://codeberg.org/zacoons/rivendell-hyprdots/) of zacoons<br>
