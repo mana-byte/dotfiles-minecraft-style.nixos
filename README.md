@@ -1,6 +1,6 @@
 # the MINECRAFT style ricing dotfiles
-<video src="./preview/output.mp4" width=512px></video>
-
+https://youtu.be/mBUksAx5-lU<br>
+<br>
 This project is a fan-made minecraft style ricing dotfiles.<br>
 My project may require some modifications to work on your computer.<br>
 usage:
