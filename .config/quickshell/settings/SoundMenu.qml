@@ -60,7 +60,7 @@ Column {
 
                 stdout: StdioCollector {
                         onStreamFinished: {
-                                const regex = /(\w+-?\w*): \d+ \/ (\d+)%/g;
+                                const regex = /(\w+-?\w*): \d+ \/  (\d+)%/g;
                                 const result = [];
                                 let match;
 
