@@ -2,7 +2,7 @@
 https://youtu.be/mBUksAx5-lU<br>
 <br>
 This project is a fan-made minecraft style ricing dotfiles.<br>
-My project may require some modifications to work on your computer.<br>
+My project may require some modifications to work on your computer. (espacially file paths. you must change all username of absulte paths.)<br>
 usage:
 - hyprland
 - [imgborders](https://codeberg.org/zacoons/imgborders), the hyprland plugin
