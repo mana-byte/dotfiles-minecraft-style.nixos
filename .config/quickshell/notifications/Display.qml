@@ -35,7 +35,7 @@ Item {
 
                         Text {
                                 text: root.notif.summary
-                                font.family: monocraft.font.family
+                                font.family: minecraft.font.family
                                 font.pixelSize: 9
                                 color: root.notif.urgency == NotificationUrgency.Critical ?
                                         "#FF55FF" :
@@ -59,7 +59,7 @@ Item {
                                 }
 
                                 text: getText()
-                                font.family: monocraft.font.family
+                                font.family: minecraft.font.family
                                 font.pixelSize: 9
                                 color: "#FFFFFF"
                                 smooth: false
@@ -68,8 +68,8 @@ Item {
         }
 
         FontLoader {
-                id: monocraft
-                source: "../assets/Monocraft.ttf"
+                id: minecraft
+                source: "../assets/Minecraft.otf"
         }
 }
 

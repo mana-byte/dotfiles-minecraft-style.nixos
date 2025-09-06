@@ -34,12 +34,13 @@ MouseArea {
                 id: buttonImg
                 scale: 2
                 source: root.disabled ? "assets/button_disabled.png" : "assets/button.png"
+                smooth: false
         }
 
         Text {
                 anchors.centerIn: parent
                 text: root.text
-                font.family: monocraft.font.family
+                font.family: minecraft.font.family
                 font.pixelSize: 14
                 color: "black"
 
@@ -47,7 +48,7 @@ MouseArea {
                         x: -1
                         y: -1
                         text: root.text
-                        font.family: monocraft.font.family
+                        font.family: minecraft.font.family
                         font.pixelSize: 14
                         color: "white"
                 }
@@ -56,11 +57,11 @@ MouseArea {
         Process {
                 id: playClick
                 running: false
-                command: ["play", "--no-show-progress", "~/.config/quickshell/components/assets/click.ogg"]
+                command: ["play", "--no-show-progress", "/home/hooss/.config/quickshell/components/assets/click.ogg"]
         }
 
         FontLoader {
-                id: monocraft
-                source: "../assets/Monocraft.ttf"
+                id: minecraft
+                source: "../assets/Minecraft.otf"
         }
 }

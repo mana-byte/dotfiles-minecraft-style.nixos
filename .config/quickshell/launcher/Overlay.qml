@@ -64,7 +64,7 @@ PanelWindow {
                                                 list.currentIndex = 0;
                                         }
 
-                                        font.family: monocraft.font.family
+                                        font.family: minecraft.font.family
                                 }
 
                                 ListView {
@@ -193,7 +193,7 @@ PanelWindow {
                                                         Text {
                                                                 text: delegate.modelData.name
                                                                 color: delegate.index == list.currentIndex ? "#FF55FF" : "black"
-                                                                font.family: monocraft.font.family
+                                                                font.family: minecraft.font.family
                                                                 font.pixelSize: 10
                                                         }
                                                 }
@@ -204,8 +204,8 @@ PanelWindow {
         }
 
         FontLoader {
-                id: monocraft
-                source: "../assets/Monocraft.ttf"
+                id: minecraft
+                source: "../assets/Minecraft.otf"
         }
 
 }

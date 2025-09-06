@@ -47,7 +47,7 @@ PanelWindow {
                                 id: appName
                                 text: root.controller.appName
                                 color: "#FFFFFF"
-                                font.family: monocraft.font.family
+                                font.family: minecraft.font.family
                                 smooth: false
                         }
 
@@ -55,7 +55,7 @@ PanelWindow {
                                 id: summary
                                 text: root.controller.summary
                                 color: "#FFFF55"
-                                font.family: monocraft.font.family
+                                font.family: minecraft.font.family
                                 font.pixelSize: 16
                                 smooth: false
                         }
@@ -66,7 +66,7 @@ PanelWindow {
                                 width: 234*2 - 20*2
                                 wrapMode: Text.WordWrap
                                 color: "#FFFFFF"
-                                font.family: monocraft.font.family
+                                font.family: minecraft.font.family
                                 font.pixelSize: 16
                                 smooth: false
                         }
@@ -87,7 +87,7 @@ PanelWindow {
         }
 
         FontLoader {
-                id: monocraft
-                source: "../assets/Monocraft.ttf"
+                id: minecraft
+                source: "../assets/Minecraft.otf"
         }
 }

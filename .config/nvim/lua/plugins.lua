@@ -14,4 +14,11 @@ return require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'christoomey/vim-tmux-navigator'
+        use {
+                'vyfor/cord.nvim',
+                run = ':Cord update',
+                -- config = function()
+                --   require('cord').setup {}
+                -- end
+        }
 end)

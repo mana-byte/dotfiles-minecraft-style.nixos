@@ -36,13 +36,13 @@ Rectangle {
                 Text {
                         text: "Game Menu"
                         color: "black"
-                        font.family: monocraft.font.family
+                        font.family: minecraft.font.family
                         font.pixelSize: 14
                         x: parent.width / 2 - width / 2
                         Text {
                                 text: "Game Menu"
                                 color: "white"
-                                font.family: monocraft.font.family
+                                font.family: minecraft.font.family
                                 font.pixelSize: 14
                                 x: -1
                                 y: -1
@@ -57,11 +57,7 @@ Rectangle {
                                         loginBook.visible = true
                                 }
                         }
-                        McButton {
-                                text: "Options"
-                                func: () => {
-                                }
-                        }
+
                         McButton {
                                 text: "Save and Quit to Title"
                                 func: () => {
@@ -104,7 +100,7 @@ Rectangle {
                                         width: 24 * 2
                                         Text {
                                                 text: "Enter the Password:"
-                                                font.family: monocraft.font.family
+                                                font.family: minecraft.font.family
                                                 font.pixelSize: 8
                                         }
 
@@ -113,7 +109,7 @@ Rectangle {
                                                 x:10
                                                 y:10
                                                 focus: loginBook.visible
-                                                font.family: monocraft.font.family
+                                                font.family: minecraft.font.family
                                                 echoMode: TextInput.Password
                                                 font.pixelSize: 8
 
@@ -137,7 +133,7 @@ Rectangle {
                                                 y: 20
                                                 text: `of ${root.username}`
                                                 color: "#555555"
-                                                font.family: monocraft.font.family
+                                                font.family: minecraft.font.family
                                                 font.pixelSize: 8
                                         }
 
@@ -145,7 +141,7 @@ Rectangle {
                                                 y: 40
                                                 text: root.context.unlockInProgress ? "trying to login..." : ""
                                                 color: "#AAAAAA"
-                                                font.family: monocraft.font.family
+                                                font.family: minecraft.font.family
                                                 font.pixelSize: 8
                                         }
                                 }
@@ -177,6 +173,12 @@ Rectangle {
                 command: ["sh", "/home/hooss/.config/quickshell/pause/exit.sh"]
         }
 
+        Process {
+                id: runOption
+                running: false
+                command: ["qs", "ipc", "call", "settings", "open"]
+        }
+
         Connections {
                 target: root.context
 
@@ -186,7 +188,7 @@ Rectangle {
         }
 
         FontLoader {
-                id: monocraft
-                source: "../assets/Monocraft.ttf"
+                id: minecraft
+                source: "../assets/Minecraft.otf"
         }
 }

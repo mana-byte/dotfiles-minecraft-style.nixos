@@ -16,7 +16,7 @@ Item {
                         y: 5
                         text:"11:11"
                         color: "white"
-                        font.family: monocraft.font.family
+                        font.family: minecraft.font.family
                         font.pixelSize: 20
                 }
         }
@@ -42,7 +42,7 @@ Item {
         }
         
         FontLoader {
-                id: monocraft
-                source: "../assets/Monocraft.ttf"
+                id: minecraft
+                source: "../assets/Minecraft.otf"
         }
 }

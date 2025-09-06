@@ -5,6 +5,7 @@ import "bar" as Bar
 import "notifications" as Notifs
 import "launcher" as Launcher
 import "pause" as Pause
+import "settings" as Settings
 
 ShellRoot {
         Bg {}
@@ -17,5 +18,6 @@ ShellRoot {
                 Notifs.PopupController.init();
                 Launcher.Controller.init();
                 Pause.Controller.init();
+                Settings.Controller.init();
         }
 }

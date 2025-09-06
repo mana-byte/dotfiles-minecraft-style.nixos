@@ -10,7 +10,7 @@ Singleton {
         property bool isOpen: false
 
         IpcHandler {
-                target: "launcher"
+                target: "settings"
 
                 function open() {
                         root.isOpen = true;
