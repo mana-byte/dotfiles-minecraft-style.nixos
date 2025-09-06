@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell.Io
 import Quickshell.Services.UPower
+import ".."
 
 Item {
         id: root
@@ -78,7 +79,7 @@ Item {
                 onTriggered: () => {
                         let percentage = UPower.displayDevice.percentage;
 
-                        if (percentage <= 0.15) {
+                        if (percentage <= Config.json.battery.low / 100) {
                                 if (!root.notifiedLowBat) {
                                         root.notifiedLowBat = true
                                         sendLowBat.running = true
@@ -86,9 +87,6 @@ Item {
                         } else {
                                 root.notifiedLowBat = false
                         }
-
-                        
-
 
                         let state = UPower.displayDevice.state;
                         if (state == root.prevState) return;

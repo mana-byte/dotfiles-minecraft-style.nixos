@@ -14,46 +14,56 @@ MouseArea {
 
         Repeater {
                 model: 9
-                Image {
+                MouseArea {
+                        id: click
                         required property int index
-
-                        function getImage() {
-                                for (let i=0; i<9; i++) {
-                                        if (Hyprland.workspaces.values[i] == null) {
-                                                continue;
-                                        }
-
-                                        if (Hyprland.workspaces.values[i].id == index+1) {
-                                                let workspace = Hyprland.workspaces.values[i]
-                                                let asset =  "assets/items/diamond_pickaxe.png"
-
-                                                workspace.toplevels.values.forEach(toplevel => {
-                                                        if (['vi', 'vim', 'nvim'].includes(toplevel.title)) {
-                                                                asset = "assets/items/writable_book.png"
-                                                                return
-                                                        }
-
-                                                        if (toplevel.title.includes('Zen Browser')) {
-                                                                asset = "assets/items/compass_13.png"
-                                                                return
-                                                        }
-
-                                                        if (toplevel.title.includes('Discord')) {
-                                                                asset = "assets/items/oak_sign.png"
-                                                                return
-                                                        }
-                                                });
-
-                                                return asset
-                                        }
-                                }
-                                return ""
+                        x: 20 * index
+                        width: 20
+                        height: 20
+                        onClicked: {
+                                Hyprland.dispatch(`workspace ${index+1}`)
                         }
 
-                        source: getImage() 
-                        x: 20 * index + 3
-                        y: 3
-                        smooth: false
+                        Image {
+
+                                function getImage() {
+                                        for (let i=0; i<9; i++) {
+                                                if (Hyprland.workspaces.values[i] == null) {
+                                                        continue;
+                                                }
+
+                                                if (Hyprland.workspaces.values[i].id == click.index+1) {
+                                                        let workspace = Hyprland.workspaces.values[i]
+                                                        let asset =  "assets/items/diamond_pickaxe.png"
+
+                                                        workspace.toplevels.values.forEach(toplevel => {
+                                                                if (['vi', 'vim', 'nvim'].includes(toplevel.title)) {
+                                                                        asset = "assets/items/writable_book.png"
+                                                                        return
+                                                                }
+
+                                                                if (toplevel.title.includes('Zen Browser')) {
+                                                                        asset = "assets/items/compass_13.png"
+                                                                        return
+                                                                }
+
+                                                                if (toplevel.title.includes('Discord')) {
+                                                                        asset = "assets/items/oak_sign.png"
+                                                                        return
+                                                                }
+                                                        });
+
+                                                        return asset
+                                                }
+                                        }
+                                        return ""
+                                }
+
+                                source: getImage() 
+                                x: 3
+                                y: 3
+                                smooth: false
+                        }
                 }
         }
         

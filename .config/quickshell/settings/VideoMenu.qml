@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell.Io
 import "../components"
+import ".."
 
 Column {
         id: root
@@ -12,6 +13,8 @@ Column {
 
         property int maxBrightness: 0
         property int brightness: 0
+
+        property var config: Config.json
 
         Row {
                 spacing: 5
@@ -23,6 +26,20 @@ Column {
                         onPercentageChanged: () => {
                                 root.brightness = percentage
                                 setBrightness.running = true
+                        }
+                }
+
+                McButton {
+                        property var wallpapers: root.config.videos.wallpaper.sources
+                        property var index: root.config.videos.wallpaper.index
+                        text: `Wallpaper: ${wallpapers[index]}`
+                        func: () => {
+                                index++
+                                if (index >= wallpapers.length) {
+                                        index = 0
+                                }
+                                root.config.videos.wallpaper.index = index
+                                Config.write()
                         }
                 }
         }

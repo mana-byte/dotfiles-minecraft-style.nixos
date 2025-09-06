@@ -95,6 +95,26 @@ PanelWindow {
                                         }
                                 }
                         }
+                        Row {
+                                spacing: 5
+                                
+                                McButton {
+                                        text: "Battery..."
+                                        func: () => {
+                                                firstMenu.visible = false
+                                                root.title = "Internet"
+                                                batteryMenu.visible = true
+                                        }
+                                }
+                                McButton {
+                                        text: "Working..."
+                                        disabled: true
+                                        func: () => {
+                                                firstMenu.visible = false
+                                                root.title = "Bluetooth"
+                                        }
+                                }
+                        }
                 }
 
                 SoundMenu {
@@ -103,6 +123,10 @@ PanelWindow {
 
                 VideoMenu {
                         id: videoMenu
+                }
+
+                BatteryMenu {
+                        id: batteryMenu
                 }
         }
 
@@ -118,6 +142,7 @@ PanelWindow {
                                 firstMenu.visible = true
                                 soundMenu.visible = false
                                 videoMenu.visible = false
+                                batteryMenu.visible = false
                         }
                 }
         }
