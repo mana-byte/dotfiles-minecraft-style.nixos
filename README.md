@@ -3,6 +3,7 @@ This project is a fan-made minecraft style ricing dotfiles.<br>
 My project may require some modifications to work on your computer.<br>
 usage:
 - hyprland
+- [imgborders](https://codeberg.org/zacoons/imgborders), the hyprland plugin
 - kitty
 - quickshell
 - neovim
