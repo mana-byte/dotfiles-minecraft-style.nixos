@@ -13,7 +13,7 @@ usage:
 - brightnessctl
 - upower
 <br>
-Inspired by [rivendell-hyprdots](https://codeberg.org/zacoons/rivendell-hyprdots/) of zacoons<br>
+Inspired by rivendell-hyprdots of zacoons, [link](https://codeberg.org/zacoons/rivendell-hyprdots/)<br>
 
 # LICENSE
 Used [Monocraft](https://github.com/IdreesInc/Monocraft) font<br>
