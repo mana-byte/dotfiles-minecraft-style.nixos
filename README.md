@@ -1,5 +1,6 @@
 # the MINECRAFT style ricing dotfiles
-This project is a fan-made minecraft style ricing dotfiles.
+This project is a fan-made minecraft style ricing dotfiles.<br>
+My project may require some modifications to work on your computer.<br>
 usage:
 - hyprland
 - kitty
