@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Settings
+Comment=Settings
+Exec=qs ipc call settings open
+Icon=/home/hooss/.config/quickshell/settings/assets/creeper_spawn_egg.png
+Terminal=false
+Type=Application
+Categories=Utility;

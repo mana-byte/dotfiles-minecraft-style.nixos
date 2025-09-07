@@ -5,6 +5,7 @@ import QtQuick.Effects
 import Quickshell
 import Quickshell.Io
 import "../components"
+import ".."
 
 Rectangle {
         id: root
@@ -13,11 +14,13 @@ Rectangle {
         required property Context context
         required property var lock
 
+        color: "transparent"
+
         property string username: "hooss"
 
         Image {
                 id: bg
-                source: "../assets/wallpaper.jpg"
+                source: `../assets/wallpapers/${Config.json.videos.wallpaper.sources[Config.json.videos.wallpaper.index]}`
                 smooth: false
                 scale: 1.3
 
