@@ -60,8 +60,6 @@ Item {
                 }
         }
 
-        
-        
         Display {
                 id: display
                 notif: root.notif
@@ -78,8 +76,10 @@ Item {
 
                 enabled: root.state == Notif.Positioned
 
-                onClicked: () => {
-                        showPopup.running = true
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
+                onClicked: e => {
+                        if (e.button == Qt.RightButton) root.state = Notif.Dismissing
+                        else showPopup.running = true
                 }
         }
 
@@ -116,6 +116,4 @@ Item {
                         root.state = Notif.Dismissing
                 }
         }
-
-        
 }

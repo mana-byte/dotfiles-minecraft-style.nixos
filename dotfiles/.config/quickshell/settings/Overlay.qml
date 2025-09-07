@@ -58,7 +58,7 @@ PanelWindow {
                         visible: true
                         spacing: 5
                         Row {
-                                spacing: 5
+                                spacing: 10
                                 
                                 McButton {
                                         text: "Video Settings..."
@@ -78,7 +78,7 @@ PanelWindow {
                                 }
                         }
                         Row {
-                                spacing: 5
+                                spacing: 10
                                 
                                 McButton {
                                         text: "Internet..."
@@ -96,7 +96,7 @@ PanelWindow {
                                 }
                         }
                         Row {
-                                spacing: 5
+                                spacing: 10
                                 
                                 McButton {
                                         text: "Battery..."

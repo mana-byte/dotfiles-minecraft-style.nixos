@@ -79,7 +79,7 @@ Item {
                 onTriggered: () => {
                         let percentage = UPower.displayDevice.percentage;
 
-                        if (percentage <= Config.json.battery.low / 100) {
+                        if (Config.json.battery.lowNotify && percentage <= Config.json.battery.low / 100) {
                                 if (!root.notifiedLowBat) {
                                         root.notifiedLowBat = true
                                         sendLowBat.running = true

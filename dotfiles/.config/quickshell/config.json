@@ -9,6 +9,7 @@
                 }
         },
         "battery": {
+                "lowNotify": false,
                 "low": 15
         }
 }

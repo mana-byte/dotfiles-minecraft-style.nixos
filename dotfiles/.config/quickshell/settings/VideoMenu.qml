@@ -17,7 +17,7 @@ Column {
         property var config: Config.json
 
         Row {
-                spacing: 5
+                spacing: 10
 
                 McSlider {
                         text: "Brightness"

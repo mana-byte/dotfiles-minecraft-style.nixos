@@ -12,16 +12,18 @@ Column {
         property bool muted: false
         property int volume: 0
         property var channels: []
+        property bool init: false
         visible: false
         spacing: 5
         Row {
-                spacing: 5
+                spacing: 10
 
                 McSlider {
                         text: "Volume"
                         initialValue: root.volume
 
                         onPercentageChanged: {
+                                if (!root.init) return
                                 root.volume = percentage
                                 setVolume.running = true
                         }
@@ -37,7 +39,7 @@ Column {
         }
 
         Row {
-                spacing: 5
+                spacing: 10
         }
 
         Process {
@@ -75,6 +77,8 @@ Column {
                                 root.volume = volume
 
                                 root.channels = result
+
+                                root.init = true
                         }
                 }
         }
