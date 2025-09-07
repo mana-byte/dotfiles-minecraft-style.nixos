@@ -17,6 +17,10 @@ usage:
 <br>
 Inspired by rivendell-hyprdots of zacoons, [link](https://codeberg.org/zacoons/rivendell-hyprdots/)<br>
 
+# HOW TO INSTALL
+you can just use `install.sh` script.<br>
+the script is not tested enough!! if you find some issues, please tell me.
+
 # LICENSE
 Used [Monocraft](https://github.com/IdreesInc/Monocraft) font<br>
 This project is not an official Minecraft product.<br>
