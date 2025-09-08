@@ -71,7 +71,6 @@ Item {
         MouseArea {
                 x: display.x - 160/2
                 y: display.y - display.height/2 + 17
-                z: 9999
 
                 width: display.width
                 height: display.height

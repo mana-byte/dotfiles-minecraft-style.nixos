@@ -50,25 +50,25 @@ Item {
 
         Process {
                 id: sendLowBat
-                command: ["notify-send", root.notifTitle, "Low Battery!", "--urgency", "critical", "-i", root.iconPath]
+                command: ["notify-send", root.notifTitle, "Low Battery!", "--urgency", "critical", "-i", root.iconPath, "-a", "Battery"]
                 running: false
         }
 
         Process {
                 id: sendUnplug
-                command: ["notify-send", root.notifTitle, "Stopped charging", "-i", root.iconPath]
+                command: ["notify-send", root.notifTitle, "Stopped charging", "-i", root.iconPath, "-a", "Battery"]
                 running: false
         }
 
         Process {
                 id: sendCharging
-                command: ["notify-send", root.notifTitle, "Charging...", "-i", root.iconPath]
+                command: ["notify-send", root.notifTitle, "Charging...", "-i", root.iconPath, "-a", "Battery"]
                 running: false
         }
 
         Process {
                 id: sendFullyCharged
-                command: ["notify-send", root.notifTitle, "Fully Charged!", "-i", root.iconPath]
+                command: ["notify-send", root.notifTitle, "Fully Charged!", "-i", root.iconPath, "-a", "Battery"]
                 running: false
         }
 

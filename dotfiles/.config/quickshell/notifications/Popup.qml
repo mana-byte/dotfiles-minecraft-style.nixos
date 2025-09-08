@@ -20,7 +20,7 @@ MouseArea {
         Rectangle {
                 z: -1
                 anchors.fill: parent
-                color: "#35000000"
+                color: "#55000000"
         }
 
         Item {

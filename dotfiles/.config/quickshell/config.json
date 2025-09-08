@@ -9,7 +9,7 @@
                 }
         },
         "battery": {
-                "lowNotify": false,
-                "low": 15
+                "lowNotify": true,
+                "low": 5
         }
 }

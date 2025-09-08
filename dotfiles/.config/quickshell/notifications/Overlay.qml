@@ -30,6 +30,7 @@ PanelWindow {
                 }
         }
 
+
         visible: stack.children.length != 0
 
         mask: Region {
@@ -47,7 +48,7 @@ PanelWindow {
                 implicitWidth: 200
                 implicitHeight: children.reduce((h, c) => h + c.height, 0)
                 interactive: false
-                
+
                 delegate: Notif {
                         required property Notification modelData
                         notif: modelData

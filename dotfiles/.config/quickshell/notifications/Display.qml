@@ -46,8 +46,6 @@ Item {
                         leftPadding: 28
                         spacing: 2
 
-                        
-
                         Text {
                                 
                                 text: root.getText(root.notif.summary)
@@ -57,6 +55,7 @@ Item {
                                         "#FF55FF" :
                                         "#FFFF55"
                                 smooth: false
+                                lineHeight: 0
                         }
 
                         Text {
@@ -74,4 +73,3 @@ Item {
                 source: "../assets/Minecraft.otf"
         }
 }
-
