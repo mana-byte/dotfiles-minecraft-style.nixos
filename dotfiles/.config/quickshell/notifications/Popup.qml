@@ -1,30 +1,26 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import Quickshell
 import Quickshell.Io
 import "../components"
 
-PanelWindow {
+MouseArea {
         id: root
+        
+        required property var notif
 
-        required property var controller
+        anchors.fill: parent
 
-        exclusionMode: ExclusionMode.Ignore
-        color: "#70000000"
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
 
-        anchors {
-                left: true
-                right: true
-                top: true
-                bottom: true
+        onClicked: {
+                visible = false
         }
 
-        MouseArea {
+        Rectangle {
+                z: -1
                 anchors.fill: parent
-                onClicked: {
-                        root.controller.isOpen = false
-                }
+                color: "#35000000"
         }
 
         Item {
@@ -45,7 +41,7 @@ PanelWindow {
                         spacing: 10
                         Text {
                                 id: appName
-                                text: root.controller.appName
+                                text: root.notif.appName
                                 color: "#FFFFFF"
                                 font.family: minecraft.font.family
                                 smooth: false
@@ -53,7 +49,7 @@ PanelWindow {
 
                         Text {
                                 id: summary
-                                text: root.controller.summary
+                                text: root.notif.summary
                                 color: "#FFFF55"
                                 font.family: minecraft.font.family
                                 font.pixelSize: 16
@@ -62,13 +58,27 @@ PanelWindow {
 
                         Text {
                                 id: body
-                                text: root.controller.body
+                                text: root.notif.body
                                 width: 234*2 - 20*2
                                 wrapMode: Text.WordWrap
                                 color: "#FFFFFF"
                                 font.family: minecraft.font.family
                                 font.pixelSize: 16
                                 smooth: false
+                        }
+
+                        Repeater {
+                                model: root.notif.actions
+
+                                McButton {
+                                        required property var modelData
+
+                                        text: modelData.text
+                                        func: () => {
+                                                root.visible = false
+                                                modelData.invoke();
+                                        }
+                                }
                         }
 
                         McButton {
@@ -83,7 +93,7 @@ PanelWindow {
         Process {
                 id: copy
                 running: false
-                command: ["wl-copy", root.controller.body]
+                command: ["wl-copy", root.notif.body]
         }
 
         FontLoader {

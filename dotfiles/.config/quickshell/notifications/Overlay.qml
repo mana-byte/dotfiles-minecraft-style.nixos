@@ -31,8 +31,9 @@ PanelWindow {
         }
 
         visible: stack.children.length != 0
+
         mask: Region {
-                item: stack
+                item: popup.visible ? popup : stack
         }
 
         ListView {
@@ -50,6 +51,7 @@ PanelWindow {
                 delegate: Notif {
                         required property Notification modelData
                         notif: modelData
+                        popup: popup
 
                         onDismissed: () => {
                                 modelData.dismiss();
@@ -58,5 +60,11 @@ PanelWindow {
                                 if (index > -1) root.notifs.splice(index, 1);
                        }
                }
+       }
+
+       Popup {
+               id: popup
+               notif: null
+               visible: false
        }
 }

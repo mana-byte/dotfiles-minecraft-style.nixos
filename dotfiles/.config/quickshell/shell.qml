@@ -15,7 +15,6 @@ ShellRoot {
         Notifs.Overlay { }
 
         Component.onCompleted: () => {
-                Notifs.PopupController.init();
                 Launcher.Controller.init();
                 Pause.Controller.init();
                 Settings.Controller.init();

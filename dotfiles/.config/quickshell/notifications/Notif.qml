@@ -8,6 +8,7 @@ Item {
         signal dismissed
 
         required property var notif
+        required property var popup
 
         property var lifetime: 5000
 
@@ -31,6 +32,8 @@ Item {
         FrameAnimation {
                 running: true
                 onTriggered: () => {
+                        if (root.notif == null) return
+                        
                         if (root.state == Notif.Starting) {
                                 if (display.x > root.targetX) {
                                         display.x -= root.velocityX * frameTime
@@ -79,7 +82,10 @@ Item {
                 acceptedButtons: Qt.LeftButton | Qt.RightButton
                 onClicked: e => {
                         if (e.button == Qt.RightButton) root.state = Notif.Dismissing
-                        else showPopup.running = true
+                        else {
+                                root.popup.notif = root.notif
+                                root.popup.visible = true
+                        }
                 }
         }
 
