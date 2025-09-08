@@ -11,6 +11,19 @@ Item {
         implicitWidth: 160 * 2
         implicitHeight: background.height * 2
 
+        function getText(text) {
+                let length = 21;
+                if (text.length > length) {
+                        return text.substring(0, length-3) + '...';
+                }
+
+                let index = text.indexOf('\n')
+                if (index > -1) {
+                        return text.substring(0, index) + '...';
+                }
+                return text
+        }
+
         Image {
                 id: background
                 source: "assets/advancement.png"
@@ -33,8 +46,11 @@ Item {
                         leftPadding: 28
                         spacing: 2
 
+                        
+
                         Text {
-                                text: root.notif.summary
+                                
+                                text: root.getText(root.notif.summary)
                                 font.family: minecraft.font.family
                                 font.pixelSize: 9
                                 color: root.notif.urgency == NotificationUrgency.Critical ?
@@ -44,21 +60,7 @@ Item {
                         }
 
                         Text {
-                                function getText() {
-                                        let length = 21;
-                                        let body = root.notif.body;
-                                        if (body.length > length) {
-                                                return body.substring(0, length-3) + '...';
-                                        }
-
-                                        let index = body.indexOf('\n')
-                                        if (index > -1) {
-                                                return body.substring(0, index) + '...';
-                                        }
-                                        return body
-                                }
-
-                                text: getText()
+                                text: root.getText(root.notif.body)
                                 font.family: minecraft.font.family
                                 font.pixelSize: 9
                                 color: "#FFFFFF"
