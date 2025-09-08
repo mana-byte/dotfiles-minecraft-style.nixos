@@ -51,6 +51,11 @@ MouseArea {
                                                                         asset = "assets/items/oak_sign.png"
                                                                         return
                                                                 }
+
+                                                                if (toplevel.title.includes('tmux')) {
+                                                                        asset = "assets/items/command_block_minecart.png"
+                                                                        return
+                                                                }
                                                         });
 
                                                         return asset
