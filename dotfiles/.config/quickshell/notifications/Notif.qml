@@ -28,26 +28,27 @@ Item {
 
         property int targetX: -40
         property int dismissX: 300
+        property bool popedUp: false
 
         FrameAnimation {
                 running: true
                 onTriggered: () => {
-                        if (root.notif == null) return
-                        
+                        if (root.notif == null) root.dismissed();
+
                         if (root.state == Notif.Starting) {
                                 if (display.x > root.targetX) {
                                         display.x -= root.velocityX * frameTime
                                         root.velocityX += 20
                                 }
                                 else {
-                                        if (root.notif.urgency == NotificationUrgency.Critical) playSoundCritical.running = true
                                         display.x = root.targetX
                                         root.state = Notif.Positioned
                                         root.velocityX = 0
+                                        if (root.notif.urgency == NotificationUrgency.Critical) playSoundCritical.running = true
                                 }
                         }
 
-                        else if (root.state == Notif.Dismissing) {
+                        if (root.state == Notif.Dismissing) {
                                 if (!root.playedOut) {
                                         playSoundOut.running = true
                                         root.playedOut = true
@@ -57,7 +58,7 @@ Item {
                                         root.velocityX += 20
                                 }
                                 else {
-                                        root.dismissed();
+                                        if(!root.popedUp) root.dismissed();
                                 }
                         }
                 }
@@ -84,6 +85,7 @@ Item {
                         else {
                                 root.popup.notif = root.notif
                                 root.popup.visible = true
+                                root.popedUp = true
                         }
                 }
         }

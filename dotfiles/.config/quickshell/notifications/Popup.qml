@@ -8,6 +8,7 @@ MouseArea {
         id: root
         
         required property var notif
+        signal dismissed
 
         anchors.fill: parent
 
@@ -15,6 +16,7 @@ MouseArea {
 
         onClicked: {
                 visible = false
+                dismissed()
         }
 
         Rectangle {
@@ -77,6 +79,7 @@ MouseArea {
                                         func: () => {
                                                 root.visible = false
                                                 modelData.invoke();
+                                                root.dismissed()
                                         }
                                 }
                         }
