@@ -44,7 +44,7 @@ the script is not tested enough!! if you find some issues, please tell me.
 # LICENSE
 My project is MIT License<br>
 <br>
-Used [Monocraft](https://github.com/IdreesInc/Monocraft) font<br>
+Used [Minecraft](https://github.com/IdreesInc/Minecraft-Font) font<br>
 <br>
 This project is not an official Minecraft product.<br>
 It is not approved by or associated with Mojang or Microsoft.<br>
