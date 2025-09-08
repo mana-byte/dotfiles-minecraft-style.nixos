@@ -8,14 +8,16 @@ usage:
 - [imgborders](https://codeberg.org/zacoons/imgborders), the hyprland plugin
 - kitty
 - quickshell
-- neovim
 - fastfetch
 - pipewire
 - pulseaudio
 - brightnessctl
 - upower
+- neovim
+- tmux
 <br>
-Inspired by rivendell-hyprdots of zacoons, [link](https://codeberg.org/zacoons/rivendell-hyprdots/)<br>
+Inspired by rivendell-hyprdots of zacoons,<br>
+https://codeberg.org/zacoons/rivendell-hyprdots/
 
 # HOW TO INSTALL
 you can just use `install.sh` script.<br>
