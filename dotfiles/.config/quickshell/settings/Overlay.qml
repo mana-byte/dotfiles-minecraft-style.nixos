@@ -10,11 +10,12 @@ PanelWindow {
 
         required property var controller
 
-        property string title: "Options"
-
         color: "#55000000"
 
         exclusionMode: ExclusionMode.Ignore
+
+        property var menuDepth: [[firstMenu, "Options"]]
+        property string title: root.menuDepth[root.menuDepth.length - 1][1]
 
         anchors {
                 left: true
@@ -64,16 +65,18 @@ PanelWindow {
                                         text: "Video Settings..."
                                         func: () => {
                                                 firstMenu.visible = false
-                                                root.title = "Video Settings"
                                                 videoMenu.visible = true
+                                                root.menuDepth.push([videoMenu, "Vidoes"]);
+                                                root.title = root.menuDepth[root.menuDepth.length - 1][1]
                                         }
                                 }
                                 McButton {
                                         text: "Music & Sounds..."
                                         func: () => {
                                                 firstMenu.visible = false
-                                                root.title = "Music & Sounds"
                                                 soundMenu.visible = true
+                                                root.menuDepth.push([soundMenu, "Music & Sounds"]);
+                                                root.title = root.menuDepth[root.menuDepth.length - 1][1]
                                         }
                                 }
                         }
@@ -84,14 +87,14 @@ PanelWindow {
                                         text: "Internet..."
                                         func: () => {
                                                 firstMenu.visible = false
-                                                root.title = "Internet"
+                                                internetMenu.visible = true
+                                                root.menuDepth.push([internetMenu, "Internet"]);
+                                                root.title = root.menuDepth[root.menuDepth.length - 1][1]
                                         }
                                 }
                                 McButton {
                                         text: "Bluetooth..."
                                         func: () => {
-                                                firstMenu.visible = false
-                                                root.title = "Bluetooth"
                                         }
                                 }
                         }
@@ -102,8 +105,9 @@ PanelWindow {
                                         text: "Battery..."
                                         func: () => {
                                                 firstMenu.visible = false
-                                                root.title = "Internet"
                                                 batteryMenu.visible = true
+                                                root.menuDepth.push([batteryMenu, "Bettery"]);
+                                                root.title = root.menuDepth[root.menuDepth.length - 1][1]
                                         }
                                 }
                                 McButton {
@@ -111,7 +115,6 @@ PanelWindow {
                                         disabled: true
                                         func: () => {
                                                 firstMenu.visible = false
-                                                root.title = "Bluetooth"
                                         }
                                 }
                         }
@@ -125,24 +128,36 @@ PanelWindow {
                         id: videoMenu
                 }
 
+                InternetMenu {
+                        id: internetMenu
+                        wifiMenu: wifiMenu
+                        menuDepth: root.menuDepth
+                }
+
                 BatteryMenu {
                         id: batteryMenu
                 }
-        }
 
+                WifiMenu {
+                        id: wifiMenu
+                        stationName: null
+                        wifi: null
+                }
+        }
+        
         McButton {
                 x: parent.width / 2 - width / 2
                 y: parent.height - 50
                 text: "Done"
                 func: () => {
-                        if (root.title == "Options") {
-                                root.controller.isOpen = false
+                        if (root.menuDepth[root.menuDepth.length - 1][1] == "Options") {
+                                root.controller.isOpen = false;
                         } else {
-                                root.title = "Options"
-                                firstMenu.visible = true
-                                soundMenu.visible = false
-                                videoMenu.visible = false
-                                batteryMenu.visible = false
+                                let menu = root.menuDepth.pop();
+                                menu[0].visible = false;
+
+                                root.menuDepth[root.menuDepth.length - 1][0].visible = true;
+                                root.title = root.menuDepth[root.menuDepth.length - 1][1];
                         }
                 }
         }
