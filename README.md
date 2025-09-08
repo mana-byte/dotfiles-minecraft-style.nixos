@@ -40,7 +40,10 @@ the script is not tested enough!! if you find some issues, please tell me.
 3. Run settings, go to video option, change wallpaper with cool minecraft button!
 
 # LICENSE
+My project is MIT License<br>
+<br>
 Used [Monocraft](https://github.com/IdreesInc/Monocraft) font<br>
+<br>
 This project is not an official Minecraft product.<br>
 It is not approved by or associated with Mojang or Microsoft.<br>
-Minecraft © Mojang AB.
+Minecraft © Mojang AB.<br>
