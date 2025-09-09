@@ -54,6 +54,7 @@
                 adwaita-icon-theme
                 hicolor-icon-theme
               ];
+              home.stateVersion = "23.05";
             };
 
             home-manager.users.yourusername = {
