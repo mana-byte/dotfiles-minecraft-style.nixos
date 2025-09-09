@@ -3,6 +3,7 @@ import QtQuick
 
 PanelWindow {
         id: bar
+        aboveWindows: false
 	anchors {
 		bottom: true
 		left: true
@@ -16,6 +17,9 @@ PanelWindow {
         }
 
         Hotbar {
+        }
+
+        Trays {
         }
 
 }

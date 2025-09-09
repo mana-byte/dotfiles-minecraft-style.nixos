@@ -1,4 +1,5 @@
 import QtQuick
+import Quickshell
 import Quickshell.Services.Notifications
 
 Item {
@@ -33,7 +34,7 @@ Item {
                 Image {
                         function getSource() {
                                 if (root.notif.image != "") return root.notif.image
-                                if (root.notif.appIcon != "") return `file:///${root.notif.appIcon}`
+                                if (root.notif.appIcon != "") return Quickshell.iconPath(root.notif.appIcon)
                                 return "assets/diamond.png"
                         }
                         source: getSource()
