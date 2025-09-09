@@ -54,7 +54,6 @@
                 adwaita-icon-theme
                 hicolor-icon-theme
               ];
-              home.stateVersion = "23.05";
             };
 
             home-manager.users.yourusername = {
@@ -67,6 +66,7 @@
 
               home.file.".local/share/applications/settings.desktop".source = ./.dotfiles/.local/share/applications/settings.desktop;
               home.file.".tmux.conf".source = ./dotfiles/.tmux.conf;
+              home.stateVersion = "23.05";
             };
 
             services.upower.enable = true;
