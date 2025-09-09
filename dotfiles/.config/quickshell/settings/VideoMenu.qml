@@ -44,6 +44,17 @@ Column {
                 }
         }
 
+        Row {
+                spacing: 10
+                McButton {
+                        text: "SystemTray: " + (root.config.systemTray.visible ? "ON" : "OFF")
+                        func: () => {
+                                root.config.systemTray.visible = !root.config.systemTray.visible
+                                Config.write()
+                        }
+                }
+        }
+
         /* BRIGHTNESS PROCESSES */
         Process {
                 id: getBrightnessMax

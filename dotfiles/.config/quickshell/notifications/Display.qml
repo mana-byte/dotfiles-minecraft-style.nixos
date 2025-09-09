@@ -1,4 +1,5 @@
 import QtQuick
+import Quickshell
 import Quickshell.Services.Notifications
 
 Item {
@@ -14,12 +15,12 @@ Item {
         function getText(text) {
                 let length = 21;
                 if (text.length > length) {
-                        return text.substring(0, length-3) + '...';
+                        text = text.substring(0, length-3) + '...';
                 }
 
-                let index = text.indexOf('\n')
+                let index = text.indexOf('\n');
                 if (index > -1) {
-                        return text.substring(0, index) + '...';
+                        text = text.substring(0, index) + '...';
                 }
                 return text
         }
@@ -31,13 +32,17 @@ Item {
                 smooth: false
                  
                 Image {
-                        source: root.notif.appIcon != "" ?
-                                `file:///${root.notif.appIcon}` :
-                                "assets/diamond.png"
-
+                        function getSource() {
+                                if (root.notif.image != "") return root.notif.image
+                                if (root.notif.appIcon != "") return Quickshell.iconPath(root.notif.appIcon)
+                                return "assets/diamond.png"
+                        }
+                        source: getSource()
                         smooth: false
                         x: 8
                         y: 8
+                        width: 16
+                        height: 16
                 }
 
                 Column {

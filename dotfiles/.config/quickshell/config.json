@@ -11,5 +11,8 @@
         "battery": {
                 "lowNotify": true,
                 "low": 5
+        },
+        "systemTray": {
+                "visible": false
         }
 }

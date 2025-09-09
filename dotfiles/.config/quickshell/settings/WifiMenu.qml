@@ -21,6 +21,8 @@ Column {
                         id: wifiBtn
                         text: "Wifi: " + (root.wifi.connectedNetwork)
                         func: () => {
+                                sendCopyNotif.running = true
+                                copyWifiName.running = true
                         }
                 }
 
@@ -28,6 +30,8 @@ Column {
                         id: ipv4
                         text: "IPv4: " + (root.wifi.ipv4)
                         func: () => {
+                                sendCopyNotif.running = true
+                                copyIpv4Name.running = true
                         }
                 }
         }
@@ -53,5 +57,23 @@ Column {
                 id: disconnectWifi
                 running: false
                 command: ["iwctl", "station", root.stationName, "disconnect"]
+        }
+
+        Process {
+                id: copyWifiName
+                running: false
+                command: ["wl-copy", root.wifi.connectedNetwork]
+        }
+
+        Process {
+                id: copyIpv4Name
+                running: false
+                command: ["wl-copy", root.wifi.ipv4]
+        }
+
+        Process {
+                id: sendCopyNotif
+                running: false
+                command: ["notify-send", "Advancement Made!", "Copy."]
         }
 }

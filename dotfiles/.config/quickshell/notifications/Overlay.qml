@@ -8,7 +8,7 @@ import Quickshell.Services.Notifications
 PanelWindow {
         id: root
 
-        property list<Notification> notifs
+        property list<Notification> notifs;
 
         WlrLayershell.namespace: "shell:notifications"
         color: "transparent"
@@ -26,6 +26,7 @@ PanelWindow {
 
                 onNotification: notif => {
                         notif.tracked = true;
+                        
                         root.notifs = [...root.notifs, notif];
                 }
         }
@@ -55,17 +56,25 @@ PanelWindow {
                         popup: popup
 
                         onDismissed: () => {
-                                modelData.dismiss();
-
                                 const index = root.notifs.indexOf(notif)
                                 if (index > -1) root.notifs.splice(index, 1);
-                       }
-               }
-       }
 
-       Popup {
-               id: popup
-               notif: null
-               visible: false
-       }
+                                root.notifs = root.notifs.filter(notif => notif != null)
+
+                                if (notif != null) modelData.dismiss();
+                        }
+                }
+        }
+
+        Popup {
+                id: popup
+                notif: null
+                visible: false
+                onDismissed: () => {
+                         const index = root.notifs.indexOf(notif)
+                         if (index > -1) root.notifs.splice(index, 1);
+
+                         notif.dismiss();
+                }
+        }
 }
