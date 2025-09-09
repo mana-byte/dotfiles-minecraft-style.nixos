@@ -147,7 +147,7 @@ PanelWindow {
         
         McButton {
                 x: parent.width / 2 - width / 2
-                y: parent.height - 50
+                y: parent.height - 100
                 text: "Done"
                 func: () => {
                         if (root.menuDepth[root.menuDepth.length - 1][1] == "Options") {

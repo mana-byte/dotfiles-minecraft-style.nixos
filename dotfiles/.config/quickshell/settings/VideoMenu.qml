@@ -53,6 +53,14 @@ Column {
                                 Config.write()
                         }
                 }
+
+                McButton {
+                        text: "Bar " + (root.config.bar.aboveWindows ? "Above Windows" : "Under Windows")
+                        func: () => {
+                                root.config.bar.aboveWindows = !root.config.bar.aboveWindows
+                                Config.write()
+                        }
+                }
         }
 
         /* BRIGHTNESS PROCESSES */

@@ -14,5 +14,8 @@
         },
         "systemTray": {
                 "visible": false
+        },
+        "bar": {
+                "aboveWindows": false
         }
 }
