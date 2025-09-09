@@ -23,6 +23,8 @@ https://codeberg.org/zacoons/rivendell-hyprdots/
 you can just use `install.sh` script.<br>
 the script is not tested enough!! if you find some issues, please tell me.
 
+change username in : Config.qml, Hunger.qml, McHalfButton.qml, McSlider.qml, McButton.qml, Surface.qml
+
 # HOW TO
 ## Change Wallpaper?
 1. Add wallpaper into `~/.config/quickshell/assets/wallpapers/`

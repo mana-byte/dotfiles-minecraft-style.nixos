@@ -31,7 +31,7 @@ Singleton {
         LazyLoader {
                 active: root.isOpen
                 Popup {
-                        controller: root
+                        property var controller: root
                 }
         }
 

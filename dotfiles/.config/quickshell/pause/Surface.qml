@@ -16,7 +16,7 @@ Rectangle {
 
         color: "transparent"
 
-        property string username: "hooss"
+        property string username: "mana"
 
         Image {
                 id: bg
@@ -173,7 +173,7 @@ Rectangle {
         Process {
                 id: exitGame
                 running: false
-                command: ["sh", "/home/hooss/.config/quickshell/pause/exit.sh"]
+                command: ["sh", "/home/mana/.config/quickshell/pause/exit.sh"]
         }
 
         Process {

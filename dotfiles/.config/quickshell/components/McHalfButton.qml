@@ -56,7 +56,7 @@ MouseArea {
         Process {
                 id: playClick
                 running: false
-                command: ["play", "--no-show-progress", "/home/hooss/.config/quickshell/components/assets/click.ogg"]
+                command: ["play", "--no-show-progress", "/home/mana/.config/quickshell/components/assets/click.ogg"]
         }
 
         FontLoader {

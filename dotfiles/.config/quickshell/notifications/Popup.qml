@@ -7,6 +7,7 @@ import "../components"
 MouseArea {
         id: root
         
+        required property var controller
         required property var notif
 
         anchors.fill: parent

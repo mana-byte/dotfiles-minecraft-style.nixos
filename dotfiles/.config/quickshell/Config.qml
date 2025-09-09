@@ -14,7 +14,7 @@ Singleton {
         
         FileView {
                 id: configFile
-                path: "/home/hooss/.config/quickshell/config.json"
+                path: "/home/mana/.config/quickshell/config.json"
 
                 watchChanges: true
                 onFileChanged: reload()

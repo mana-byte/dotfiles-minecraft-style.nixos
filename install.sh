@@ -37,9 +37,7 @@ while true; do
         
         case "$answer" in
                 [Yy]* )
-                        sudo pacman -S hyprland kitty neovim fastfetch pipewire pulseaudio birghtnessctl upower qiuckshell tmux
-                        hyprpm update
-                        hyprpm add https://codeberg.org/zacoons/imgborders 
+                        
                         break
                         ;;
                 [Nn]* )
