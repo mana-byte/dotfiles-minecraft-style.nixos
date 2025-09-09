@@ -45,7 +45,7 @@ Item {
                 }
         }
 
-        property var iconPath: "home/hooss/.config/quickshell/assets/redstone.png"
+        property var iconPath: "/home/hooss/.config/quickshell/assets/redstone.png"
         property var notifTitle: "Battery"
 
         Process {
