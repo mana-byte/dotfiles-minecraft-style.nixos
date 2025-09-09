@@ -1,4 +1,7 @@
 # the MINECRAFT style ricing dotfiles
+
+CAUTION: This project is still in development.
+
 https://youtu.be/mBUksAx5-lU<br>
 <br>
 This project is a fan-made minecraft style ricing dotfiles.<br>
