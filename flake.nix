@@ -54,6 +54,9 @@
                 adwaita-icon-theme
                 hicolor-icon-theme
               ];
+            };
+
+            home-manager.users.yourusername = {
               xdg.configFile."hypr".source = ./dotfiles/.config/hypr;
               xdg.configFile."kitty".source = ./dotfiles/.config/kitty;
               xdg.configFile."nvim".source = ./dotfiles/.config/nvim;
@@ -66,7 +69,6 @@
             };
 
             services.upower.enable = true;
-            services.brightnessctl.enable = true;
 
             # audio
             security.rtkit.enable = true;
