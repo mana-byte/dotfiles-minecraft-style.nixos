@@ -64,7 +64,7 @@
               xdg.configFile."fastfetch".source = ./dotfiles/.config/fastfetch;
               xdg.configFile."imgborders".source = ./dotfiles/.config/imgborders;
 
-              home.file.".local/share/applications/settings.desktop".source = ./.dotfiles/.local/share/applications/settings.desktop;
+              home.file.".local/share/applications/settings.desktop".source = ./dotfiles/.local/share/applications/settings.desktop;
               home.file.".tmux.conf".source = ./dotfiles/.tmux.conf;
               home.stateVersion = "23.05";
             };
