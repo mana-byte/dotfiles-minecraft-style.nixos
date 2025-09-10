@@ -38,7 +38,7 @@
               packages = with pkgs; [
                 xdg-desktop-portal
                 home-manager
-                hyprland
+                dconf
                 kitty
                 neovim
                 fastfetch
