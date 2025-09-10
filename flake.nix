@@ -50,7 +50,6 @@
                 quickshell
                 tmux
                 sox
-                iwd
 
                 cmake
 
@@ -92,6 +91,7 @@
             };
 
             services.upower.enable = true;
+            networking.wireless.iwd.enable = true;
 
             programs.hyprland = {
               enable = true;
