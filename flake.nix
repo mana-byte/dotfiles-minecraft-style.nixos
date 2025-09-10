@@ -25,6 +25,9 @@
               home-manager.nixosModules.home-manager
             ];
 
+            # enable flakes
+            nix.settings.experimental-features = ["nix-command" "flakes"];
+
             home-manager.useUserPackages = true;
 
             # Define a user with specific packages and groups
