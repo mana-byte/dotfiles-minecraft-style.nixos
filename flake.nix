@@ -84,6 +84,10 @@
 
             services.upower.enable = true;
 
+            programs.hyprland = {
+              enable = true;
+              xwayland.enable = true;
+            };
             # audio
             security.rtkit.enable = true;
             services.pipewire = {
