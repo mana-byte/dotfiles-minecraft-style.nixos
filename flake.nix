@@ -73,6 +73,7 @@
                 discord
                 nautilus
                 brave
+                wl-clipboard
               ];
             };
             environment.systemPackages = with pkgs; [

@@ -20,6 +20,9 @@ To test this rice on NIXOS use:
 sudo nixos-rebuild switch --flake github:mana-byte/dotfiles-minecraft-style.nixos#minecraft --impure --no-write-lock-file
 sudo reboot
 # Connect with user mana and launch hyprland
+
+# If git repo is updated and you want to update
+sudo nixos-rebuild switch --flake github:mana-byte/dotfiles-minecraft-style.nixos#minecraft --impure --no-write-lock-file --refresh
 ```
 It will create a new user called **mana** with the rice.
 
