@@ -31,6 +31,10 @@
             users.users.mana = {
               isNormalUser = true;
               extraGroups = ["wheel" "networkmanager" "iwd" "video" "audio"];
+
+              # No password for login
+              hashedPassword = "";
+
               packages = with pkgs; [
                 xdg-desktop-portal
                 home-manager

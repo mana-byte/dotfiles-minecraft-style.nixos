@@ -1,32 +1,41 @@
 # the MINECRAFT style ricing dotfiles
 
-CAUTION: This project is still in development.
+This repo contains hooss-only/dotfiles-minecraft-style for Nixos (the original repo is for Arch btw).
 
 https://youtu.be/mBUksAx5-lU<br>
-<br>
-This project is a fan-made minecraft style ricing dotfiles.<br>
-My project may require some modifications to work on your computer. (espacially file paths. you must change all username of absulte paths.)<br>
-usage:
-- hyprland
-- [imgborders](https://codeberg.org/zacoons/imgborders), the hyprland plugin
-- kitty
-- quickshell
-- fastfetch
-- pipewire
-- pulseaudio
-- brightnessctl
-- upower
-- neovim
-- tmux
-<br>
+
 Inspired by rivendell-hyprdots of zacoons,<br>
 https://codeberg.org/zacoons/rivendell-hyprdots/
 
-# HOW TO INSTALL
-you can just use `install.sh` script.<br>
-the script is not tested enough!! if you find some issues, please tell me.
+# HOW TO INSTALL (Nixos)
 
-change username in : Config.qml, Hunger.qml, McHalfButton.qml, McSlider.qml, McButton.qml, Surface.qml
+Before doing anything modify the flake with your username instead of mana !
+
+To test this rice on NIXOS use:
+
+```bash
+sudo nixos-rebuild switch --flake github:mana-byte/dotfiles-minecraft-style.nixos#minecraft --impure --no-write-lock-file
+```
+
+It will create a new user called mana with the rice.
+
+To install on your current user use: (Remember to backup you config files first !)
+
+```bash
+git clone https://github.com/mana-byte/dotfiles-minecraft-style.nixos.git
+
+# change mana with your username in flake.nix and the other files below
+# Add the packages you want in flake.nix
+
+cd dotfiles-minecraft-style.nixos
+sudo nixos-rebuild switch --flake .#minecraft --impure --no-write-lock-file
+```
+
+You also need to change mana with your username in the following files:
+Config.qml, Hunger.qml, McHalfButton.qml, McSlider.qml, McButton.qml, Surface.qml
+
+NOTE: If the imgborders plugin doesn't work you can compile and install it using => https://github.com/mana-byte/imgborders
+
 
 # HOW TO
 ## Change Wallpaper?
