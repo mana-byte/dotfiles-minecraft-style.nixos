@@ -1,9 +1,11 @@
 import Quickshell
 import QtQuick
 
+import ".."
+
 PanelWindow {
         id: bar
-        aboveWindows: false
+        aboveWindows: Config.json.bar.aboveWindows
 	anchors {
 		bottom: true
 		left: true
