@@ -44,7 +44,6 @@
                 aquamarine
                 dconf
                 kitty
-                neovim
                 fastfetch
                 brightnessctl
                 upower
@@ -72,6 +71,9 @@
                 discord
               ];
             };
+            environment.systemPackages = with pkgs; [
+              neovim
+            ];
 
             home-manager.users.mana = {
               xdg.configFile."hypr".source = ./dotfiles/.config/hypr;
