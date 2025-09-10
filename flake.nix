@@ -54,6 +54,9 @@
 
                 cmake
 
+                # only for pactl cmd
+                pulseaudio
+
                 libsForQt5.qt5.qtsvg
                 libsForQt5.qt5.qtimageformats
                 libsForQt5.qt5.qtmultimedia

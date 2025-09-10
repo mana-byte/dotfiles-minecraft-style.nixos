@@ -18,12 +18,20 @@ To test this rice on NIXOS use:
 
 ```bash
 sudo nixos-rebuild switch --flake github:mana-byte/dotfiles-minecraft-style.nixos#minecraft --impure --no-write-lock-file
+sudo reboot
+# Connect with user mana and launch hyprland
 ```
+It will create a new user called **mana** with the rice.
 
-It will create a new user called mana with the rice.
+When you are done testing (sudo nixos-rebuild switch won't work directly):
+```bash
+sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix
+```
+to go back to your previous configuration.
+
+-----
 
 To install on your current user use: (Remember to backup you config files first !)
-
 ```bash
 git clone https://github.com/mana-byte/dotfiles-minecraft-style.nixos.git
 
@@ -37,7 +45,7 @@ sudo nixos-rebuild switch --flake .#minecraft --impure --no-write-lock-file
 You also need to change mana with your username in the following files:
 Config.qml, Hunger.qml, McHalfButton.qml, McSlider.qml, McButton.qml, Surface.qml
 
-NOTE: If the imgborders plugin doesn't work you can compile and install it using => https://github.com/mana-byte/imgborders
+**NOTE** : If the imgborders plugin doesn't work you can compile and install it using => https://github.com/mana-byte/imgborders
 
 
 # HOW TO
