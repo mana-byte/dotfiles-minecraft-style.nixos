@@ -12,7 +12,7 @@
     home-manager,
   }: {
     nixosConfigurations = {
-      my-machine = nixpkgs.lib.nixosSystem {
+      minecraft = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ({
