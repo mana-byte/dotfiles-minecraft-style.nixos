@@ -38,6 +38,7 @@
               packages = with pkgs; [
                 xdg-desktop-portal
                 home-manager
+                aquamarine
                 dconf
                 kitty
                 neovim
