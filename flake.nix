@@ -71,6 +71,8 @@
 
                 # apps for full features
                 discord
+                nautilus
+                brave
               ];
             };
             environment.systemPackages = with pkgs; [
@@ -92,6 +94,7 @@
 
             services.upower.enable = true;
             networking.wireless.iwd.enable = true;
+            networking.networkmanager.wifi.backend = "iwd";
 
             programs.hyprland = {
               enable = true;
