@@ -2,7 +2,7 @@
 
 This repo contains hooss-only/dotfiles-minecraft-style for Nixos (the original repo is for Arch btw).
 
-https://youtu.be/mBUksAx5-lU<br>
+https://github.com/user-attachments/assets/bb3774c7-d3fe-428a-a551-7c9c20ec12bd
 
 Inspired by rivendell-hyprdots of zacoons,<br>
 https://codeberg.org/zacoons/rivendell-hyprdots/
