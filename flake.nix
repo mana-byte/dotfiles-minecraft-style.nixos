@@ -32,6 +32,7 @@
               isNormalUser = true;
               extraGroups = ["wheel" "networkmanager" "iwd" "video" "audio"];
               packages = with pkgs; [
+                xdg-desktop-portal
                 home-manager
                 hyprland
                 kitty
@@ -53,6 +54,11 @@
 
                 adwaita-icon-theme
                 hicolor-icon-theme
+                starship
+                hyprcursor
+
+                libnotify
+                dunst
               ];
             };
 
