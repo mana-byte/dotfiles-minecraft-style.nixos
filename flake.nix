@@ -28,7 +28,7 @@
             home-manager.useUserPackages = true;
 
             # Define a user with specific packages and groups
-            users.users.yourusername = {
+            users.users.mana = {
               isNormalUser = true;
               extraGroups = ["wheel" "networkmanager" "iwd" "video" "audio"];
               packages = with pkgs; [
@@ -59,10 +59,13 @@
 
                 libnotify
                 dunst
+
+                # apps for full features
+                discord
               ];
             };
 
-            home-manager.users.yourusername = {
+            home-manager.users.mana = {
               xdg.configFile."hypr".source = ./dotfiles/.config/hypr;
               xdg.configFile."kitty".source = ./dotfiles/.config/kitty;
               xdg.configFile."nvim".source = ./dotfiles/.config/nvim;
